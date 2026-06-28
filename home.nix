@@ -10,5 +10,6 @@
 	imports = [
 		./modules/home/base.nix
 		./modules/home/packages.nix
+		./modules/home/niri.nix
 	];
 }

@@ -1,4 +1,4 @@
-{}:
+{ config, pkgs, ... }:
 
 {
 	boot.loader.systemd-boot.enable = true;
@@ -8,6 +8,7 @@
 
   	nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
+	nixpkgs.config.allowUnfree = true;
 
 	time.timeZone = "Europe/Kyiv";
 	i18n.defaultLocale = "en_US.UTF-8";

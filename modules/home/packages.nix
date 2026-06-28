@@ -6,5 +6,10 @@
 		neovim
 		htop
 		fzf
+		foot
+		zed-editor
+		helium
+		fuzzel
+		wl-clipboard
 	];
 }
