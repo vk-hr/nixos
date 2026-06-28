@@ -12,25 +12,35 @@ in
 
 	programs.git = {
 		enable = true;
-		settings.user = {
-			name = "vk-hr";
-			email = "viktor.harhatt@gmail.com";
-			push = { autoSetupRemote = true; };
-			pull = { rebase = false; };
-			init = { defaultBranch = "main"; };
-			core = { editor = "nvim"; };
+		settings = {
+			user = {
+				name = "vk-hr";
+				email = "viktor.harhatt@gmail.com";
+			};
+			push = { 
+				autoSetupRemote = true; 
+			};
+			pull = { 
+				rebase = false; 
+			};
+			init = { 
+				defaultBranch = "main"; 
+			};
+			core = { 
+				editor = "nvim"; 
+			};
 		};
 	};
 
 	programs.ssh = {
 		enable = true;
-		addKeysToAgent = "yes";
-		matchBlocks = {
+		settings = {
+			"*" = {
+				AddKeysToAgent = "yes";
+			};
 			"github.com" = {
-				identityFile = "${persistDir}/.ssh/id_github";
-				extraOptions = {
-					StrictHostKeyChecking = "accept-new";
-				};
+				IdentityFile = "${persistDir}/.ssh/id_github";
+				StrictHostKeyChecking = "accept-new";
 			};
 		};
 	};
