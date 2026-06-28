@@ -11,5 +11,6 @@
 		helium
 		fuzzel
 		wl-clipboard
+		xwayland
 	];
 }

@@ -2,11 +2,11 @@
 
 {
 	boot.loader.systemd-boot.enable = true;
-  	boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader.efi.canTouchEfiVariables = true;
 
-  	boot.kernelPackages = pkgs.linuxPackages_latest;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  	nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 	nixpkgs.config.allowUnfree = true;
 
@@ -15,14 +15,22 @@
 
 	users.users.empty = {
 	    isNormalUser = true;
-	    extraGroups = [ "wheel" "networkmanager" ]; 
+			extraGroups = [ "wheel" "networkmanager" ];
 	};
 
 	security.sudo.wheelNeedsPassword = true;
-  
-  	environment.systemPackages = with pkgs; [
-    		vim
-    		wget
-  	];
 
+	services.openssh = {
+	  enable = true;
+		openFirewall = true;
+		settings = {
+		  PasswordAuthentication = false;
+			PermitRootLogin = "no";
+		};
+	};
+
+  environment.systemPackages = with pkgs; [
+    vim
+    wget
+  ];
 }

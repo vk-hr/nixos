@@ -1,6 +1,6 @@
 {
   "nodes": {
-    "helium-browser": {
+    "helium": {
       "inputs": {
         "nixpkgs": [
           "nixpkgs"
@@ -59,7 +59,7 @@
     },
     "root": {
       "inputs": {
-        "helium-browser": "helium-browser",
+        "helium": "helium",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       }
