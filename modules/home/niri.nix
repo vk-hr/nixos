@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ ... }:
 
 {
   xdg.configFile."niri/config.kdl".text = ''
@@ -71,21 +71,21 @@
   '';
 
   xdg.configFile."fuzzel/fuzzel.ini".text = ''
-    [main]
-    font = monospace
-    prompt = ">> "
-    lines = 10
-    width = 40
-    horizontal-pad = 8
-    vertical-pad = 4
-    inner-pad = 4
+        [main]
+        font = monospace
+        prompt = ">> "
+        lines = 10
+        width = 40
+        horizontal-pad = 8
+        vertical-pad = 4
+        inner-pad = 4
 
-    [colors]
-    background = 1e1e2eff
-    text = cdd6f4ff
-    		match = f38ba8ff
-    		selection = 585b70ff
-		selection-text = cdd6f4ff
-    		border = 89b4faff
-	'';
+        [colors]
+        background = 1e1e2eff
+        text = cdd6f4ff
+        		match = f38ba8ff
+        		selection = 585b70ff
+    		selection-text = cdd6f4ff
+        		border = 89b4faff
+    	'';
 }
