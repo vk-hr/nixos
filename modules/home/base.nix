@@ -1,8 +1,12 @@
-{ config, ... }:
+{ inputs, config, ... }:
+
 let
   persistDir = "/persist/home/${config.home.username}";
 in
+
 {
+  imports = [ inputs.helium.homeModules.default ];
+
   programs.git = {
     enable = true;
     settings = {
@@ -27,6 +31,7 @@ in
 
   programs.ssh = {
     enable = true;
+    enableDefaultConfig = false;
     settings = {
       "*" = {
         AddKeysToAgent = "yes";
@@ -36,5 +41,16 @@ in
         StrictHostKeyChecking = "accept-new";
       };
     };
+  };
+
+  programs.helium = {
+    enable = true;
+    flags = [
+      "--ozone-platform=wayland"
+      "--enable-features=WaylandWindowDecorations"
+      "--disable-component-update"
+      "--check-for-updates-interval=0"
+      "--disable-background-networking"
+    ];
   };
 }

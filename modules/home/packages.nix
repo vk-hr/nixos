@@ -8,12 +8,11 @@
     fzf
     foot
     zed-editor
-    helium
     fuzzel
     wl-clipboard
-    xwayland
     nil
     nixd
     nixfmt
+    opencode
   ];
 }
