@@ -12,5 +12,7 @@
 		fuzzel
 		wl-clipboard
 		xwayland
+		nil
+		nixd
 	];
 }
