@@ -1,15 +1,15 @@
 {
-  home.persistence."/persist/home" = {
+  home.persistence."/persist" = {
     enable = true;
     directories = [
-      "empty/.ssh"
-      "empty/.config/age"
-      "empty/Documents"
-      "empty/Downloads"
-      "empty/Pictures"
-      "empty/Videos"
-      "empty/Music"
+      ".ssh"
+      ".config/age"
+      "Documents"
+      "Downloads"
+      "Pictures"
+      "Videos"
+      "Music"
     ];
-    files = [ "empty/.bash_history" ];
+    files = [ ".bash_history" ];
   };
 }
