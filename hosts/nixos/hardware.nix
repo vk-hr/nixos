@@ -38,18 +38,21 @@
     device = "/dev/mapper/cryptroot";
     fsType = "btrfs";
     options = [ "subvol=home" ];
+    neededForBoot = true;
   };
 
   fileSystems."/nix" = {
     device = "/dev/mapper/cryptroot";
     fsType = "btrfs";
     options = [ "subvol=nix" ];
+    neededForBoot = true;
   };
 
   fileSystems."/persist" = {
     device = "/dev/mapper/cryptroot";
     fsType = "btrfs";
     options = [ "subvol=persist" ];
+    neededForBoot = true;
   };
 
   fileSystems."/boot" = {
