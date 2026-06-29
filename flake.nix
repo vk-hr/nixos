@@ -34,7 +34,7 @@
       mkHost = import ./lib { inherit inputs lib; };
     in
     {
-      formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.nixfmt-rfc-style;
+      formatter = lib.mapAttrs (system: pkgs: pkgs.nixfmt-rfc-style) nixpkgs.legacyPackages;
 
       nixosConfigurations.nixos = mkHost "nixos" "x86_64-linux";
     };
