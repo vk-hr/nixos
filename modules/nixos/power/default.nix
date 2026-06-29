@@ -2,6 +2,7 @@
 
 {
   imports = [
-    ../../modules/nixos
+    ./logind.nix
+    ./tlp.nix
   ];
 }
