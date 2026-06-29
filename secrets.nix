@@ -1,5 +1,5 @@
 let
-  publicKey = "age1qqpshufn8e20dtdf0lu0pzp7avk7gdhwkkqwe5v4wzas6a9f5ccqq26pzm";
+  publicKey = "age1ky4kalve8l3l47x5j8ytemkyaunwecz9u8g7uk8mnjpqlqm2lytswp8kr9";
 in
 {
   "secrets/ssh-github.age".publicKeys = [ publicKey ];

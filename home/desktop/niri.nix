@@ -58,6 +58,8 @@
         "Mod+Shift+4".action.move-column-to-workspace = 4;
         "Mod+Shift+5".action.move-column-to-workspace = 5;
 
+        "Mod+F".action.maximize-column = [ ];
+
         "Mod+Shift+E".action.quit = [ ];
         "Mod+Shift+Slash".action.toggle-overview = [ ];
       };

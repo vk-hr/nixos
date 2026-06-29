@@ -9,8 +9,5 @@
       "/var/lib/nixos"
       "/var/log"
     ];
-    files = [
-      "/etc/machine-id"
-    ];
   };
 }

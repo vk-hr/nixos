@@ -1,7 +1,5 @@
 { ... }:
 
 {
-  imports = [
-    ./helium.nix
-  ];
+  imports = [ ./helium.nix ];
 }
