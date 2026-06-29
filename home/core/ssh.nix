@@ -8,7 +8,7 @@
         AddKeysToAgent = "yes";
       };
       "github.com" = {
-        IdentityFile = "/run/secrets/ssh-github";
+        IdentityFile = "/run/agenix/ssh-github";
         StrictHostKeyChecking = "accept-new";
       };
     };
