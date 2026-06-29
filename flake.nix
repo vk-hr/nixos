@@ -28,7 +28,8 @@
     };
   };
 
-  outputs = inputs@{ self, nixpkgs, ... }:
+  outputs =
+    inputs@{ self, nixpkgs, ... }:
     let
       lib = nixpkgs.lib;
       mkHost = import ./lib { inherit inputs lib; };

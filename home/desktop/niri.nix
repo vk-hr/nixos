@@ -30,21 +30,21 @@
       binds = {
         "Mod+Return".action.spawn = "foot";
         "Mod+D".action.spawn = "fuzzel";
-        "Mod+Q".action.close-window = [];
+        "Mod+Q".action.close-window = [ ];
 
-        "Mod+Left".action.focus-column-left = [];
-        "Mod+Right".action.focus-column-right = [];
-        "Mod+Up".action.focus-window-up = [];
-        "Mod+Down".action.focus-window-down = [];
+        "Mod+Left".action.focus-column-left = [ ];
+        "Mod+Right".action.focus-column-right = [ ];
+        "Mod+Up".action.focus-window-up = [ ];
+        "Mod+Down".action.focus-window-down = [ ];
 
-        "Mod+Shift+Left".action.move-column-left = [];
-        "Mod+Shift+Right".action.move-column-right = [];
+        "Mod+Shift+Left".action.move-column-left = [ ];
+        "Mod+Shift+Right".action.move-column-right = [ ];
 
-        "Mod+Comma".action.consume-window-into-column = [];
-        "Mod+Period".action.expel-window-from-column = [];
+        "Mod+Comma".action.consume-window-into-column = [ ];
+        "Mod+Period".action.expel-window-from-column = [ ];
 
-        "Mod+R".action.switch-preset-column-width = [];
-        "Mod+Shift+R".action.switch-preset-window-height = [];
+        "Mod+R".action.switch-preset-column-width = [ ];
+        "Mod+Shift+R".action.switch-preset-window-height = [ ];
 
         "Mod+1".action.focus-workspace = 1;
         "Mod+2".action.focus-workspace = 2;
@@ -58,8 +58,8 @@
         "Mod+Shift+4".action.move-column-to-workspace = 4;
         "Mod+Shift+5".action.move-column-to-workspace = 5;
 
-        "Mod+Shift+E".action.quit = [];
-        "Mod+Shift+Slash".action.show-workspace-overview = [];
+        "Mod+Shift+E".action.quit = [ ];
+        "Mod+Shift+Slash".action.show-workspace-overview = [ ];
       };
 
       environment = {
