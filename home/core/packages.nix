@@ -12,7 +12,7 @@
     wl-clipboard
     nil
     nixd
-    nixfmt
+    nixfmt-rfc-style
     opencode
   ];
 }
