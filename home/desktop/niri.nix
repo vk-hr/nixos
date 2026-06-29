@@ -23,7 +23,7 @@
 
       outputs = {
         "eDP-1" = {
-          scale = 1.0;
+          scale = 1.5;
         };
       };
 
@@ -59,7 +59,7 @@
         "Mod+Shift+5".action.move-column-to-workspace = 5;
 
         "Mod+Shift+E".action.quit = [ ];
-        "Mod+Shift+Slash".action.show-workspace-overview = [ ];
+        "Mod+Shift+Slash".action.toggle-overview = [ ];
       };
 
       environment = {
