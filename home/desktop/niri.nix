@@ -28,7 +28,7 @@
       };
 
       binds = {
-        "Mod+Return".action.spawn = "foot";
+        "Mod+Return".action.spawn = "ghostty";
         "Mod+D".action.spawn = "fuzzel";
         "Mod+Q".action.close-window = [ ];
 

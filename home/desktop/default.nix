@@ -1,5 +1,8 @@
 { ... }:
 
 {
-  imports = [ ./niri.nix ];
+  imports = [
+    ./niri.nix
+    ./ghostty.nix
+  ];
 }

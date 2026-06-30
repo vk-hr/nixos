@@ -6,7 +6,7 @@
     neovim
     htop
     fzf
-    foot
+    ghostty
     zed-editor
     fuzzel
     wl-clipboard
