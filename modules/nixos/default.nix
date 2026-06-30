@@ -7,6 +7,8 @@
     ./users.nix
     ./locale.nix
     ./openssh.nix
+    ./sudo.nix
+    ./packages.nix
     ./nix-ld.nix
     ./networking.nix
     ./audio.nix
