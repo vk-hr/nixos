@@ -3,6 +3,8 @@
 {
   programs.niri = {
     settings = {
+      spawn-at-startup = [ { sh = "waybar"; } ];
+
       input = {
         keyboard.xkb.layout = "us";
         touchpad = {
