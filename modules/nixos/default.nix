@@ -10,6 +10,7 @@
     ./sudo.nix
     ./packages.nix
     ./nix-ld.nix
+    ./gc.nix
     ./networking.nix
     ./audio.nix
     ./bluetooth.nix
