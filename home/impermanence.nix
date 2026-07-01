@@ -4,6 +4,8 @@
     directories = [
       ".ssh"
       ".config/age"
+      ".config/nushell"
+      ".local/share/nushell"
       "Documents"
       "Downloads"
       "Pictures"
