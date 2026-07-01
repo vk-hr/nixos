@@ -27,13 +27,16 @@
         clock.format = "{:%H:%M  %a %b %d}";
 
         network = {
-          format-wifi = "NET {essid} ({signalStrength}%)";
-          format-ethernet = "NET {ipaddr}/{cidr}";
-          format-disconnected = "NET offline";
+          format-wifi = "  {essid} ({signalStrength}%)";
+          format-ethernet = "  {ipaddr}/{cidr}";
+          format-disconnected = "  offline";
+          tooltip-format = "Connected to {essid}\nSignal: {signalStrength}%\nIP: {ipaddr}";
         };
 
         battery = {
-          format = "BAT {capacity}% {icon}";
+          format = "{icon}  {capacity}%";
+          format-charging = "  {capacity}%";
+          format-plugged = "  {capacity}%";
           format-icons = [
             ""
             ""
