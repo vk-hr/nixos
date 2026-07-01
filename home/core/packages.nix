@@ -13,7 +13,6 @@
       htop
       fzf
       ghostty
-      zed-editor
       fuzzel
       wl-clipboard
       nil
