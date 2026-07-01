@@ -13,7 +13,10 @@
           color: ${colors.foreground};
           background-color: ${colors.background};
       }
-      #workspaces button.focused {
+      #workspaces button.active,
+      #workspaces button.focused,
+      #workspaces button.active *,
+      #workspaces button.focused * {
           background-color: ${colors.accent};
           color: ${colors.background};
       }
