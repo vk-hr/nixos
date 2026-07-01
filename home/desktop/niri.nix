@@ -1,4 +1,8 @@
-{ font, ... }:
+{
+  font,
+  colors,
+  ...
+}:
 
 {
   programs.niri = {
@@ -21,6 +25,12 @@
           { proportion = 0.5; }
           { proportion = 0.66667; }
         ];
+        focus-ring = {
+          enable = true;
+          width = 2;
+          active.color = colors.accent;
+          inactive.color = colors.selection_background;
+        };
       };
 
       outputs = {
@@ -74,23 +84,4 @@
       };
     };
   };
-
-  xdg.configFile."fuzzel/fuzzel.ini".text = ''
-    [main]
-    font = "${font.mono}:size=12"
-    prompt = ">> "
-    lines = 10
-    width = 40
-    horizontal-pad = 8
-    vertical-pad = 4
-    inner-pad = 4
-
-    [colors]
-    background = 1e1e2eff
-    text = cdd6f4ff
-    match = f38ba8ff
-    selection = 585b70ff
-    selection-text = cdd6f4ff
-    border = 89b4faff
-  '';
 }

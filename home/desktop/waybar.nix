@@ -1,11 +1,24 @@
-{ font, ... }:
+{
+  font,
+  colors,
+  ...
+}:
 
 {
   programs.waybar = {
     enable = true;
     style = ''
       * {
-          font-family: "JetBrainsMono Nerd Font";
+          font-family: "${font.mono}";
+          color: ${colors.foreground};
+          background-color: ${colors.background};
+      }
+      #workspaces button.focused {
+          background-color: ${colors.accent};
+          color: ${colors.background};
+      }
+      #clock, #network, #battery, #tray {
+          padding: 0 8px;
       }
     '';
     settings = {

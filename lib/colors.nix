@@ -1,0 +1,26 @@
+{
+  accent = "#e68e0d";
+  foreground = "#bebebe";
+  background = "#121212";
+  selection_foreground = "#bebebe";
+  selection_background = "#515151";
+
+  palette = {
+    "0" = "#333333";
+    "1" = "#D35F5F";
+    "2" = "#FFC107";
+    "3" = "#b91c1c";
+    "4" = "#e68e0d";
+    "5" = "#D35F5F";
+    "6" = "#bebebe";
+    "7" = "#bebebe";
+    "8" = "#8a8a8d";
+    "9" = "#B91C1C";
+    "10" = "#FFC107";
+    "11" = "#b90a0a";
+    "12" = "#f59e0b";
+    "13" = "#B91C1C";
+    "14" = "#eaeaea";
+    "15" = "#ffffff";
+  };
+}
