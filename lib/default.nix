@@ -2,14 +2,13 @@
 
 let
   font = import ./font.nix;
-  icons = import ./icons.nix { inherit lib; };
 in
 hostname: system:
 
 inputs.nixpkgs.lib.nixosSystem {
   inherit system;
   specialArgs = {
-    inherit inputs font icons;
+    inherit inputs font;
   };
   modules = [
     ../hosts/${hostname}
@@ -23,7 +22,7 @@ inputs.nixpkgs.lib.nixosSystem {
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
       home-manager.extraSpecialArgs = {
-        inherit inputs font icons;
+        inherit inputs font;
       };
       home-manager.users.empty = import ../home;
     }
