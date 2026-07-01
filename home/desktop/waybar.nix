@@ -1,6 +1,13 @@
+{ font, ... }:
+
 {
   programs.waybar = {
     enable = true;
+    style = ''
+      * {
+          font-family: "${font.mono}";
+      }
+    '';
     settings = {
       mainBar = {
         layer = "top";

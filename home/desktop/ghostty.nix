@@ -1,9 +1,11 @@
+{ font, ... }:
+
 {
   programs.ghostty = {
     enable = true;
     settings = {
       theme = "Gruvbox Dark";
-      font-family = "monospace";
+      font-family = font.mono;
       font-size = 12;
       window-padding-x = 8;
       window-padding-y = 4;

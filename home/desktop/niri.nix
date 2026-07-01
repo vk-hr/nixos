@@ -1,4 +1,4 @@
-{ ... }:
+{ font, ... }:
 
 {
   programs.niri = {
@@ -77,7 +77,7 @@
 
   xdg.configFile."fuzzel/fuzzel.ini".text = ''
     [main]
-    font = monospace
+    font = "${font.mono}:size=12"
     prompt = ">> "
     lines = 10
     width = 40

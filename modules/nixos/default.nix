@@ -9,6 +9,7 @@
     ./openssh.nix
     ./sudo.nix
     ./packages.nix
+    ./fonts.nix
     ./nix-ld.nix
     ./gc.nix
     ./networking.nix
