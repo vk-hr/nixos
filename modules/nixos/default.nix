@@ -21,5 +21,6 @@
     ./printing.nix
     ./greetd.nix
     ./niri.nix
+    ./docker.nix
   ];
 }

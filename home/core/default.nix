@@ -8,5 +8,6 @@
     ./nushell.nix
     ./starship.nix
     ./carapace.nix
+    ./lazydocker.nix
   ];
 }

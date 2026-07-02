@@ -21,6 +21,7 @@
       opencode
       just
       nvd
+      dive
     ]
     ++ [ inputs.agenix.packages.x86_64-linux.default ];
 }
