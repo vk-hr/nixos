@@ -5,6 +5,8 @@
       "wheel"
       "networkmanager"
       "docker"
+      "libvirtd"
+      "kvm"
     ];
   };
 }

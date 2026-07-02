@@ -22,5 +22,6 @@
     ./greetd.nix
     ./niri.nix
     ./docker.nix
+    ./libvirt.nix
   ];
 }
