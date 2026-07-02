@@ -1,4 +1,7 @@
 {
+  lib,
+  pkgs,
+  inputs,
   font,
   colors,
   ...
@@ -7,6 +10,10 @@
 {
   programs.niri = {
     settings = {
+      xwayland-satellite.path =
+        lib.getExe
+          inputs.niri-flake.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable;
+
       spawn-at-startup = [ { sh = "waybar"; } ];
 
       input = {
@@ -41,7 +48,7 @@
 
       binds = {
         "Mod+Return".action.spawn = "ghostty";
-        "Mod+D".action.spawn = "fuzzel";
+        "Mod+Space".action.spawn = "fuzzel";
         "Mod+Q".action.close-window = [ ];
 
         "Mod+Left".action.focus-column-left = [ ];
@@ -78,7 +85,7 @@
 
       environment = {
         QT_QPA_PLATFORM = "wayland";
-        SDL_VIDEODRIVER = "wayland";
+        SDL_VIDEODRIVER = "wayland,x11";
         _JAVA_AWT_WM_NONREPARENTING = "1";
         NIXOS_OZONE_WL = "1";
       };

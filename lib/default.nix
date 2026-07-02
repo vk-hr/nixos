@@ -18,7 +18,10 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.impermanence.nixosModules.impermanence
     inputs.niri-flake.nixosModules.niri
     {
-      nixpkgs.overlays = [ inputs.helium.overlays.default ];
+      nixpkgs.overlays = [
+        inputs.helium.overlays.default
+        inputs.niri-flake.overlays.niri
+      ];
 
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
