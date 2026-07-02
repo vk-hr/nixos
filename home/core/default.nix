@@ -7,5 +7,6 @@
     ./ssh.nix
     ./nushell.nix
     ./starship.nix
+    ./carapace.nix
   ];
 }

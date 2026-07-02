@@ -13,5 +13,6 @@
     sof-tools
     pipewire
     pavucontrol
+    nushell
   ];
 }

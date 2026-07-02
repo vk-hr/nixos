@@ -5,6 +5,7 @@
     ./boot.nix
     ./nix.nix
     ./users.nix
+    ./bash.nix
     ./locale.nix
     ./openssh.nix
     ./sudo.nix
