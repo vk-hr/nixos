@@ -23,5 +23,6 @@
     ./niri.nix
     ./docker.nix
     ./libvirt.nix
+    ./gaming.nix
   ];
 }
