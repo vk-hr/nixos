@@ -22,6 +22,7 @@
       just
       nvd
       dive
+      pureref
     ]
     ++ [ inputs.agenix.packages.x86_64-linux.default ];
 }
