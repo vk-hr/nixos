@@ -10,5 +10,6 @@
     ./starship.nix
     ./carapace.nix
     ./lazydocker.nix
+    ./xdg.nix
   ];
 }
