@@ -10,7 +10,7 @@
     [
       git
       neovim
-      htop
+      nvtopPackages.intel
       fzf
       ghostty
       fuzzel

@@ -3,6 +3,7 @@
 {
   imports = [
     ./packages.nix
+    ./btop.nix
     ./git.nix
     ./ssh.nix
     ./nushell.nix
