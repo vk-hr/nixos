@@ -14,7 +14,9 @@
         lib.getExe
           inputs.niri-flake.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable;
 
-      spawn-at-startup = [ { sh = "waybar"; } ];
+      spawn-at-startup = [
+        { sh = "waybar"; }
+      ];
 
       input = {
         keyboard.xkb.layout = "us";
@@ -84,9 +86,11 @@
       };
 
       environment = {
+        XDG_CURRENT_DESKTOP = "niri";
         QT_QPA_PLATFORM = "wayland";
         SDL_VIDEODRIVER = "wayland,x11";
         _JAVA_AWT_WM_NONREPARENTING = "1";
+        GTK_USE_PORTAL = "1";
         NIXOS_OZONE_WL = "1";
       };
     };

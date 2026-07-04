@@ -1,6 +1,21 @@
-{ ... }:
+{
+  inputs,
+  pkgs,
+  lib,
+  ...
+}:
 
 {
+  imports = [ inputs.xdp-termfilepickers.homeManagerModules.default ];
+
+  xdg.portal = {
+    enable = true;
+    extraPortals = with pkgs; [
+      xdg-desktop-portal-wlr
+      xdg-desktop-portal-gtk
+    ];
+  };
+
   xdg.userDirs = {
     enable = true;
     createDirectories = false;
@@ -23,4 +38,13 @@
     "d %h/rogram/study 0755"
     "d %h/rogram/music 0755"
   ];
+
+  services.xdg-desktop-portal-termfilepickers = {
+    enable = true;
+    package = inputs.xdp-termfilepickers.packages.${pkgs.system}.default;
+    config.terminal_command = [
+      (lib.getExe pkgs.ghostty)
+      "-e"
+    ];
+  };
 }
