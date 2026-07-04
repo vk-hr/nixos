@@ -26,18 +26,13 @@
       url = "github:sodiboo/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    xdp-termfilepickers = {
-      url = "github:Guekka/xdg-desktop-portal-termfilepickers";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs =
     inputs@{ self, nixpkgs, ... }:
     let
       lib = nixpkgs.lib;
-      mkHost = import ./lib { inherit inputs lib; };
+      mkHost = import ./lib { inherit inputs; };
     in
     {
       formatter = lib.mapAttrs (system: pkgs: pkgs.nixfmt) nixpkgs.legacyPackages;

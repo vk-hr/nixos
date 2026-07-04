@@ -1,21 +1,6 @@
-{
-  inputs,
-  pkgs,
-  lib,
-  ...
-}:
+{ pkgs, ... }:
 
 {
-  imports = [ inputs.xdp-termfilepickers.homeManagerModules.default ];
-
-  xdg.portal = {
-    enable = true;
-    extraPortals = with pkgs; [
-      xdg-desktop-portal-wlr
-      xdg-desktop-portal-gtk
-    ];
-  };
-
   xdg.userDirs = {
     enable = true;
     createDirectories = false;
@@ -39,12 +24,13 @@
     "d %h/rogram/music 0755"
   ];
 
-  services.xdg-desktop-portal-termfilepickers = {
-    enable = true;
-    package = inputs.xdp-termfilepickers.packages.${pkgs.system}.default;
-    config.terminal_command = [
-      (lib.getExe pkgs.ghostty)
-      "-e"
-    ];
-  };
+  xdg.configFile."xdg-desktop-portal-termfilechooser/config".text = ''
+    [filechooser]
+    cmd = ${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
+    default_dir = $HOME
+    env = TERMCMD='ghostty -e'
+    env = PATH=$PATH:/run/current-system/sw/bin:/etc/profiles/per-user/empty/bin
+    open_mode = suggested
+    save_mode = last
+  '';
 }
