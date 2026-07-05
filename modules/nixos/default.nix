@@ -24,5 +24,6 @@
     ./docker.nix
     ./libvirt.nix
     ./gaming.nix
+    ./flatpak.nix
   ];
 }

@@ -17,6 +17,7 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.agenix.nixosModules.default
     inputs.impermanence.nixosModules.impermanence
     inputs.niri.nixosModules.niri
+    inputs.flatpak.nixosModules.nix-flatpak
     {
       nixpkgs.overlays = [
         inputs.helium.overlays.default

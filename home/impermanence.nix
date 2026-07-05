@@ -6,6 +6,7 @@
       ".config/age"
       ".config/nushell"
       ".local/share/nushell"
+      ".var/app"
       "rogram"
     ];
     files = [ ".bash_history" ];

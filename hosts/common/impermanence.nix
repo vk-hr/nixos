@@ -7,6 +7,7 @@
       "/var/lib/bluetooth"
       "/var/lib/systemd"
       "/var/lib/nixos"
+      "/var/lib/flatpak"
       "/var/log"
     ];
   };

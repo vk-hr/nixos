@@ -14,6 +14,5 @@
     pipewire
     pavucontrol
     nushell
-    spotify
   ];
 }
