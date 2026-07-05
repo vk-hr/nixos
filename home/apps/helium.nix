@@ -7,7 +7,6 @@
     enable = true;
     flags = [
       "--ozone-platform=wayland"
-      "--enable-features=WaylandWindowDecorations"
       "--enable-features=UseOzonePlatform"
       "--enable-features=WebRTCPipeWireCapturer"
       "--disable-component-update"

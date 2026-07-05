@@ -9,6 +9,8 @@
 {
   programs.niri = {
     settings = {
+      prefer-no-csd = true;
+
       xwayland-satellite.path =
         lib.getExe
           inputs.niri-flake.packages.${pkgs.stdenv.hostPlatform.system}.xwayland-satellite-unstable;
