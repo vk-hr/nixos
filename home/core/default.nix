@@ -10,6 +10,7 @@
     ./starship.nix
     ./carapace.nix
     ./lazydocker.nix
+    ./zoxide.nix
     ./xdg.nix
   ];
 }
