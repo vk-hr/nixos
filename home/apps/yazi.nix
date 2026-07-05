@@ -12,14 +12,35 @@
       jq
       imagemagick
       fd
+      ouch
     ];
 
-    settings.manager = {
-      ratio = [ 1 3 4 ];
-      show_hidden = false;
-      sort_by = "alphabetical";
-      sort_dir_first = true;
+    plugins = {
+      ouch = pkgs.yaziPlugins.ouch;
+      office = pkgs.yaziPlugins.office;
     };
+
+    settings = {
+      manager = {
+        ratio = [ 1 3 4 ];
+        show_hidden = false;
+        sort_by = "alphabetical";
+        sort_dir_first = true;
+      };
+      plugin.prepend_previewers = [
+        {
+          mime = "application/{*zip,tar,bzip2,7z*,rar,xz,zstd,java-archive}";
+          run = "ouch";
+        }
+      ];
+      opener.extract = [
+        { run = ''ouch d -y "$@"''; desc = "Extract here"; for = "unix"; }
+      ];
+    };
+
+    keymap.mgr.prepend_keymap = [
+      { on = [ "C" ]; run = "plugin ouch"; desc = "Compress with ouch"; }
+    ];
 
     theme.manager = {
       cwd.fg = colors.accent;
