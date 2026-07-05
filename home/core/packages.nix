@@ -23,6 +23,17 @@
       nvd
       dive
       pureref
+      curl
+      tree
+      ncdu
+      bat
+      ffmpeg
+      mpv
+      imv
+      telegram-desktop
+      discord
+      libreoffice
+      blender
     ]
     ++ [ inputs.agenix.packages.x86_64-linux.default ];
 }
