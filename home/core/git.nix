@@ -9,6 +9,11 @@
       pull.rebase = false;
       init.defaultBranch = "main";
       core.editor = "nvim";
+      core.pager = "delta";
+      interactive.diffFilter = "delta --color-only";
+      delta.navigate = true;
+      diff.algorithm = "histogram";
+      merge.conflictstyle = "diff3";
     };
   };
 }

@@ -23,6 +23,9 @@
       nvd
       dive
       statix
+      gh
+      lazygit
+      delta
       pureref
       curl
       tree
