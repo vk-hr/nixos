@@ -36,5 +36,5 @@
       libreoffice
       blender
     ]
-    ++ [ inputs.agenix.packages.x86_64-linux.default ];
+    ++ [ inputs.ragenix.packages.x86_64-linux.default ];
 }
