@@ -11,6 +11,7 @@
     ./core
     ./desktop
     ./apps
+    ./dev
     ./impermanence.nix
   ];
 }
