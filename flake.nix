@@ -32,6 +32,8 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    treefmt-nix.url = "github:numtide/treefmt-nix";
   };
 
   outputs =
@@ -39,9 +41,22 @@
     let
       lib = nixpkgs.lib;
       mkHost = import ./lib { inherit inputs; };
+      eachSystem = lib.genAttrs [ "x86_64-linux" ];
+      treefmtEval = system: inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} {
+        programs = {
+          nixfmt.enable = true;
+          gofmt.enable = true;
+          rustfmt.enable = true;
+          biome.enable = true;
+          ruff-format.enable = true;
+          clang-format.enable = true;
+          shfmt.enable = true;
+        };
+      };
     in
     {
-      formatter = lib.mapAttrs (system: pkgs: pkgs.nixfmt) nixpkgs.legacyPackages;
+      formatter = eachSystem (system: (treefmtEval system).config.build.wrapper);
+      checks = eachSystem (system: (treefmtEval system).config.build.check);
 
       nixosConfigurations.nixos = mkHost "nixos" "x86_64-linux";
     };
