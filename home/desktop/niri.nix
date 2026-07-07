@@ -84,6 +84,37 @@
 
         "Mod+Shift+E".action.quit = [ ];
         "Mod+Shift+Slash".action.toggle-overview = [ ];
+
+        "XF86AudioMute".action.spawn = [
+          "wpctl"
+          "set-mute"
+          "@DEFAULT_AUDIO_SINK@"
+          "toggle"
+        ];
+        "XF86AudioLowerVolume".action.spawn = [
+          "wpctl"
+          "set-volume"
+          "@DEFAULT_AUDIO_SINK@"
+          "5%-"
+        ];
+        "XF86AudioRaiseVolume".action.spawn = [
+          "wpctl"
+          "set-volume"
+          "-l"
+          "1.5"
+          "@DEFAULT_AUDIO_SINK@"
+          "5%+"
+        ];
+        "XF86MonBrightnessDown".action.spawn = [
+          "brightnessctl"
+          "set"
+          "5%-"
+        ];
+        "XF86MonBrightnessUp".action.spawn = [
+          "brightnessctl"
+          "set"
+          "+5%"
+        ];
       };
 
       environment = {

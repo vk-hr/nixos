@@ -28,6 +28,7 @@
       ncdu
       bat
       ffmpeg
+      brightnessctl
       mpv
       imv
       telegram-desktop
