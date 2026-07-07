@@ -125,6 +125,24 @@
         GTK_USE_PORTAL = "1";
         NIXOS_OZONE_WL = "1";
       };
+
+      window-rules = [
+        {
+          matches = [ { title = "(?i)picture.in.picture"; } ];
+          open-floating = true;
+          default-column-width = {
+            fixed = 480;
+          };
+          default-window-height = {
+            fixed = 270;
+          };
+          default-floating-position = {
+            x = 32;
+            y = 32;
+            relative-to = "bottom-right";
+          };
+        }
+      ];
     };
   };
 }
