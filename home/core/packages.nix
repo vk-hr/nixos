@@ -22,6 +22,7 @@
       just
       nvd
       dive
+      statix
       pureref
       curl
       tree

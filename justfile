@@ -6,6 +6,10 @@ default:
 fmt:
     nix fmt .
 
+# lint nix files
+lint:
+    statix check .
+
 # validate flake
 check:
     nix flake check
