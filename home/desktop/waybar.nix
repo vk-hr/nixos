@@ -55,7 +55,7 @@
         };
 
         pulseaudio = {
-          format = "{icon}  {volume}%";
+          format = "{icon} {volume}%";
           format-muted = "󰖸  muted";
           format-icons = {
             headphone = "󰋋";
@@ -76,9 +76,9 @@
         };
 
         battery = {
-          format = "{icon}  {capacity}%";
-          format-charging = "󰂄  {capacity}%";
-          format-plugged = "󰚥  {capacity}%";
+          format = "{icon} {capacity}%";
+          format-charging = "󰂄 {capacity}%";
+          format-plugged = "󰚥 {capacity}%";
           format-icons = [
             "󰁺"
             "󰁻"
