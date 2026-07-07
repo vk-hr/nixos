@@ -47,6 +47,18 @@
         "eDP-1" = {
           scale = 1.5;
         };
+        "DP-1" = {
+          scale = 1.5;
+          mode = {
+            width = 3840;
+            height = 2160;
+            refresh = 60.0;
+          };
+          position = {
+            x = 1920;
+            y = 0;
+          };
+        };
       };
 
       binds = {
@@ -54,13 +66,13 @@
         "Mod+Space".action.spawn = "fuzzel";
         "Mod+Q".action.close-window = [ ];
 
-        "Mod+Left".action.focus-column-left = [ ];
-        "Mod+Right".action.focus-column-right = [ ];
+        "Mod+Left".action.focus-column-or-monitor-left = [ ];
+        "Mod+Right".action.focus-column-or-monitor-right = [ ];
         "Mod+Up".action.focus-window-up = [ ];
         "Mod+Down".action.focus-window-down = [ ];
 
-        "Mod+Shift+Left".action.move-column-left = [ ];
-        "Mod+Shift+Right".action.move-column-right = [ ];
+        "Mod+Shift+Left".action.move-column-left-or-to-monitor-left = [ ];
+        "Mod+Shift+Right".action.move-column-right-or-to-monitor-right = [ ];
 
         "Mod+Comma".action.consume-window-into-column = [ ];
         "Mod+Period".action.expel-window-from-column = [ ];
