@@ -17,7 +17,7 @@
       wl-clipboard
       nil
       nixd
-      nixfmt-rfc-style
+      nixfmt
       opencode
       just
       nvd
