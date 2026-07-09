@@ -9,6 +9,5 @@
       ".var/app"
       "rogram"
     ];
-    files = [ ".bash_history" ];
   };
 }

@@ -18,7 +18,7 @@
     ./bluetooth.nix
     ./graphics/intel.nix
     ./power
-    ./printing.nix
+    ./services.nix
     ./greetd.nix
     ./niri.nix
     ./docker.nix

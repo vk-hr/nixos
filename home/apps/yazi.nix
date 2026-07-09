@@ -22,7 +22,11 @@
 
     settings = {
       manager = {
-        ratio = [ 1 3 4 ];
+        ratio = [
+          1
+          3
+          4
+        ];
         show_hidden = false;
         sort_by = "alphabetical";
         sort_dir_first = true;
@@ -34,12 +38,20 @@
         }
       ];
       opener.extract = [
-        { run = ''ouch d -y "$@"''; desc = "Extract here"; for = "unix"; }
+        {
+          run = ''ouch d -y "$@"'';
+          desc = "Extract here";
+          for = "unix";
+        }
       ];
     };
 
     keymap.mgr.prepend_keymap = [
-      { on = [ "C" ]; run = "plugin ouch"; desc = "Compress with ouch"; }
+      {
+        on = [ "C" ];
+        run = "plugin ouch";
+        desc = "Compress with ouch";
+      }
     ];
 
     theme.manager = {

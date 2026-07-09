@@ -97,7 +97,10 @@
         Python = {
           formatter.external = {
             command = "ruff";
-            arguments = [ "format" "-" ];
+            arguments = [
+              "format"
+              "-"
+            ];
           };
           format_on_save = "on";
           tab_size = 4;

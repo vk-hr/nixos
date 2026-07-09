@@ -34,13 +34,13 @@ switch:
 test:
     sudo nixos-rebuild test --flake .#nixos
 
-# edit an agenix secret (e.g. `just secret-edit ssh-github`)
+# edit a ragenix secret (e.g. `just secret-edit ssh-github`)
 secret-edit name:
-    agenix -e secrets/{{name}}.age
+    ragenix -e secrets/{{name}}.age
 
 # re-encrypt all secrets after changing keys
 secret-rekey:
-    agenix -r
+    ragenix -r
 
 # show why a package is in the system closure (e.g. `just why firefox`)
 why package:

@@ -42,21 +42,25 @@
       lib = nixpkgs.lib;
       mkHost = import ./lib { inherit inputs; };
       eachSystem = lib.genAttrs [ "x86_64-linux" ];
-      treefmtEval = system: inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} {
-        programs = {
-          nixfmt.enable = true;
-          gofmt.enable = true;
-          rustfmt.enable = true;
-          biome.enable = true;
-          ruff-format.enable = true;
-          clang-format.enable = true;
-          shfmt.enable = true;
+      treefmtEval =
+        system:
+        inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} {
+          programs = {
+            nixfmt.enable = true;
+            gofmt.enable = true;
+            rustfmt.enable = true;
+            biome.enable = true;
+            ruff-format.enable = true;
+            clang-format.enable = true;
+            shfmt.enable = true;
+          };
         };
-      };
     in
     {
       formatter = eachSystem (system: (treefmtEval system).config.build.wrapper);
-      checks = eachSystem (system: (treefmtEval system).config.build.check);
+      checks = eachSystem (system: {
+        formatting = (treefmtEval system).config.build.check self;
+      });
 
       nixosConfigurations.nixos = mkHost "nixos" "x86_64-linux";
     };

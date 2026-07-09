@@ -10,6 +10,10 @@
       enable = true;
       onCalendar = "weekly";
     };
-    overrides.global.Context.sockets = [ "wayland" "!x11" "!fallback-x11" ];
+    overrides.global.Context.sockets = [
+      "wayland"
+      "!x11"
+      "!fallback-x11"
+    ];
   };
 }
