@@ -24,19 +24,19 @@ update-input input:
 
 # build the system without switching
 build:
-    nh os build
+    nh os build .
 
 # build and switch immediately
 switch:
-    nh os switch
+    nh os switch .
 
 # try the configuration without making it default
 test:
-    nh os test
+    nh os test .
 
 # switch home configuration
 home:
-    nh home switch
+    nh home switch .
 
 # edit a ragenix secret (e.g. `just secret-edit ssh-github`)
 secret-edit name:
