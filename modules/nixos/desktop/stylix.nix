@@ -4,7 +4,7 @@
   stylix = {
     enable = true;
 
-    base16Scheme = ../../../themes/black-metal.yaml;
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/charcoal-dark.yaml";
 
     fonts = {
       monospace = {
@@ -28,5 +28,7 @@
     };
 
     polarity = "dark";
+
+    targets.chromium.enable = false;
   };
 }

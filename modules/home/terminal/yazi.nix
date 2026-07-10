@@ -1,8 +1,5 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
-let
-  colors = config.lib.stylix.colors;
-in
 {
   programs.yazi = {
     enable = true;
@@ -56,14 +53,5 @@ in
         desc = "Compress with ouch";
       }
     ];
-
-    theme.manager = {
-      cwd.fg = colors.base0D;
-      hovered = {
-        bg = colors.base02;
-        fg = colors.base05;
-      };
-      border_style.fg = colors.base03;
-    };
   };
 }
