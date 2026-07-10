@@ -1,15 +1,25 @@
 # nixos
 
-Personal NixOS configuration for a single-user Intel Dell laptop.
+Personal NixOS configuration for a single-user Intel Dell laptop (host `laptop`).
 
 ## structure
 
-- `flake.nix` — entry point; defines inputs, outputs, formatter, and hosts
-- `lib/` — helper functions and shared theme (colors, font)
-- `hosts/` — host configurations (`hosts/<hostname>/`)
-- `hosts/common/` — shared host configuration (modules, secrets, impermanence)
-- `modules/` — NixOS system modules
-- `home/` — home-manager configuration for user `empty`
+- `flake.nix` — entry point; imports `./hosts`, `./home`, `./pkgs`, `./devshells`
+- `lib/` — factory functions: `mkHost`, `mkHome`
+- `hosts/` — per-machine NixOS configurations (`hosts/<hostname>/`)
+- `hosts/<hostname>/disko.nix` — declarative disk layout for that machine
+- `modules/nixos/` — NixOS system modules organized by topic
+  - `core/` — boot, users, impermanence, btrfs, nix settings
+  - `desktop/` — niri, wayland, pipewire, stylix
+  - `networking/` — networkmanager, firewall, ssh
+  - `hardware/` — bluetooth, printing, power, graphics
+  - `services/` — docker, libvirt, flatpak
+- `modules/home/` — reusable home-manager modules organized by topic
+- `home/` — flake-parts module exporting `flake.homeConfigurations`
+- `home/vkhr@laptop.nix` — home-manager entry for user `vkhr` on host `laptop`
+- `themes/` — base16 color schemes (Black Metal variants)
+- `pkgs/` — perSystem packages and formatter
+- `devshells/` — perSystem dev shells
 - `secrets/` — age-encrypted secrets managed with `ragenix`
 - `justfile` — common tasks (build, switch, fmt, lint, secrets, gc)
 
@@ -29,6 +39,9 @@ just switch
 # test the configuration without making it default
 just test
 
+# switch home configuration
+just home
+
 # update flake inputs
 just update
 
@@ -41,11 +54,16 @@ just secret-rekey
 
 Secrets are encrypted with `ragenix` (a Rust reimplementation of `agenix`).
 The public key is defined in `secrets.nix`.
-The age identity is expected at `/persist/home/empty/.config/age/age.key`.
+The age identity is expected at `/persist/home/vkhr/.config/age/age.key`.
 
 ## notable features
 
-- Impermanent root on Btrfs, persisted under `/persist`
+- Flake-parts architecture
+- Explicit imports only (no auto-import loaders)
+- Btrfs with LUKS, compression, and snapshots via `btrbk`
+- Declarative disk layout with `disko`
+- Consistent theming via `stylix` (Black Metal base16 schemes)
+- Impermanence for system and selected home state
 - niri Wayland compositor with xwayland support
 - Home-manager as a NixOS module
 - Secrets managed with `ragenix`

@@ -24,15 +24,19 @@ update-input input:
 
 # build the system without switching
 build:
-    sudo nixos-rebuild build --flake .#nixos
+    nh os build
 
 # build and switch immediately
 switch:
-    sudo nixos-rebuild switch --flake .#nixos
+    nh os switch
 
 # try the configuration without making it default
 test:
-    sudo nixos-rebuild test --flake .#nixos
+    nh os test
+
+# switch home configuration
+home:
+    nh home switch
 
 # edit a ragenix secret (e.g. `just secret-edit ssh-github`)
 secret-edit name:
@@ -44,7 +48,7 @@ secret-rekey:
 
 # show why a package is in the system closure (e.g. `just why firefox`)
 why package:
-    nix why-depends .#nixosConfigurations.nixos.config.system.build.toplevel nixpkgs#{{package}}
+    nix why-depends .#nixosConfigurations.laptop.config.system.build.toplevel nixpkgs#{{package}}
 
 # list recent system generations
 history:
@@ -52,7 +56,7 @@ history:
 
 # rollback to previous generation
 rollback:
-    sudo nixos-rebuild rollback --flake .#nixos
+    sudo nixos-rebuild rollback --flake .#laptop
 
 # show diff between current and previous generation
 diff:
@@ -60,7 +64,7 @@ diff:
 
 # garbage collect old generations (keep last 7 days)
 gc:
-    sudo nix-collect-garbage --delete-older-than 7d
+    nh clean all -k 7
 
 # commit all changes (e.g. `just commit "add feature"`)
 commit msg:

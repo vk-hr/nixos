@@ -4,6 +4,11 @@
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
+    flake-parts = {
+      url = "github:hercules-ci/flake-parts";
+      inputs.nixpkgs-lib.follows = "nixpkgs";
+    };
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -34,34 +39,28 @@
     };
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
+
+    disko = {
+      url = "github:nix-community/disko";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    stylix = {
+      url = "github:danth/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
-    inputs@{ self, nixpkgs, ... }:
-    let
-      lib = nixpkgs.lib;
-      mkHost = import ./lib { inherit inputs; };
-      eachSystem = lib.genAttrs [ "x86_64-linux" ];
-      treefmtEval =
-        system:
-        inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} {
-          programs = {
-            nixfmt.enable = true;
-            gofmt.enable = true;
-            rustfmt.enable = true;
-            biome.enable = true;
-            ruff-format.enable = true;
-            clang-format.enable = true;
-            shfmt.enable = true;
-          };
-        };
-    in
-    {
-      formatter = eachSystem (system: (treefmtEval system).config.build.wrapper);
-      checks = eachSystem (system: {
-        formatting = (treefmtEval system).config.build.check self;
-      });
+    inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [ "x86_64-linux" ];
 
-      nixosConfigurations.nixos = mkHost "nixos" "x86_64-linux";
+      imports = [
+        ./hosts
+        ./home
+        ./pkgs
+        ./devshells
+      ];
     };
 }

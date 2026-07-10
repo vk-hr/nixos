@@ -1,17 +1,12 @@
-{ ... }:
-
+{ inputs, ... }:
+let
+  lib = inputs.self.lib;
+in
 {
-  home.username = "empty";
-  home.homeDirectory = "/home/empty";
-  home.stateVersion = "26.05";
-
-  programs.home-manager.enable = true;
-
-  imports = [
-    ./core
-    ./desktop
-    ./apps
-    ./dev
-    ./impermanence.nix
-  ];
+  flake.homeConfigurations = {
+    "vkhr@laptop" = lib.mkHome {
+      system = "x86_64-linux";
+      homeModule = ./vkhr + "@laptop.nix";
+    };
+  };
 }
