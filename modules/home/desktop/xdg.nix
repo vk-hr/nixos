@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  username,
+  ...
+}:
 
 {
   xdg.userDirs = {
@@ -29,7 +33,7 @@
     cmd = ${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh
     default_dir = $HOME
     env = TERMCMD='ghostty -e'
-      env = PATH=$PATH:/run/current-system/sw/bin:/etc/profiles/per-user/vkhr/bin
+      env = PATH=$PATH:/run/current-system/sw/bin:/etc/profiles/per-user/${username}/bin
     open_mode = suggested
     save_mode = last
   '';

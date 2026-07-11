@@ -1,4 +1,4 @@
-{ ... }:
+{ username, ... }:
 
 {
   preservation = {
@@ -24,7 +24,7 @@
         }
       ];
 
-      users.vkhr.directories = [
+      users.${username}.directories = [
         {
           directory = ".ssh";
           mode = "0700";
@@ -55,23 +55,23 @@
   };
 
   systemd.tmpfiles.settings."10-persist-parents" = {
-    "/home/vkhr/.local".d = {
-      user = "vkhr";
+    "/home/${username}/.local".d = {
+      user = username;
       group = "users";
       mode = "0755";
     };
-    "/home/vkhr/.local/share".d = {
-      user = "vkhr";
+    "/home/${username}/.local/share".d = {
+      user = username;
       group = "users";
       mode = "0755";
     };
-    "/home/vkhr/.local/state".d = {
-      user = "vkhr";
+    "/home/${username}/.local/state".d = {
+      user = username;
       group = "users";
       mode = "0755";
     };
-    "/home/vkhr/.cache".d = {
-      user = "vkhr";
+    "/home/${username}/.cache".d = {
+      user = username;
       group = "users";
       mode = "0755";
     };

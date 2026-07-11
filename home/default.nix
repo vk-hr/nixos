@@ -7,6 +7,7 @@ in
     "vkhr@laptop" = lib.mkHome {
       system = "x86_64-linux";
       homeModule = ./vkhr + "@laptop.nix";
+      username = "vkhr";
     };
   };
 }

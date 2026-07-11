@@ -1,11 +1,11 @@
-{ config, ... }:
+{ username, ... }:
 
 {
   age = {
-    identityPaths = [ "/persist/home/vkhr/.config/age/age.key" ];
+    identityPaths = [ "/persist/home/${username}/.config/age/age.key" ];
     secrets.ssh-github = {
       file = ../../../secrets/ssh-github.age;
-      owner = "vkhr";
+      owner = username;
       group = "users";
       mode = "600";
     };

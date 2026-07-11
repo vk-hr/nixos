@@ -3,10 +3,13 @@
   system,
   hostModule,
   homeModule,
+  username,
 }:
 inputs.nixpkgs.lib.nixosSystem {
   inherit system;
-  specialArgs = { inherit inputs; };
+  specialArgs = {
+    inherit inputs username;
+  };
   modules = [
     hostModule
     inputs.home-manager.nixosModules.home-manager
@@ -26,8 +29,10 @@ inputs.nixpkgs.lib.nixosSystem {
 
       home-manager.useGlobalPkgs = true;
       home-manager.useUserPackages = true;
-      home-manager.extraSpecialArgs = { inherit inputs; };
-      home-manager.users.vkhr = homeModule;
+      home-manager.extraSpecialArgs = {
+        inherit inputs username;
+      };
+      home-manager.users.${username} = homeModule;
     }
   ];
 }

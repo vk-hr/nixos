@@ -10,6 +10,7 @@ in
       system = "x86_64-linux";
       hostModule = ./laptop;
       homeModule = ../home + "/vkhr@laptop.nix";
+      username = "vkhr";
     };
   };
 }
