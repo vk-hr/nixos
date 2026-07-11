@@ -19,7 +19,7 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
-  fileSystems."/home".neededForBoot = lib.mkDefault true;
+  fileSystems."/nix".neededForBoot = lib.mkDefault true;
   fileSystems."/persist".neededForBoot = lib.mkDefault true;
 
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";

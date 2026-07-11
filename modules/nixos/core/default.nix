@@ -2,7 +2,7 @@
   imports = [
     ./boot.nix
     ./users.nix
-    ./impermanence.nix
+    ./preservation.nix
     ./btrfs.nix
     ./agenix.nix
     ./nix.nix

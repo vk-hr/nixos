@@ -11,7 +11,7 @@ inputs.nixpkgs.lib.nixosSystem {
     hostModule
     inputs.home-manager.nixosModules.home-manager
     inputs.ragenix.nixosModules.default
-    inputs.impermanence.nixosModules.impermanence
+    inputs.preservation.nixosModules.default
     inputs.niri.nixosModules.niri
     inputs.flatpak.nixosModules.nix-flatpak
     inputs.disko.nixosModules.default

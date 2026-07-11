@@ -1,5 +1,14 @@
 {
   disko.devices = {
+    nodev."/" = {
+      fsType = "tmpfs";
+      mountOptions = [
+        "size=8G"
+        "defaults"
+        "mode=755"
+      ];
+    };
+
     disk = {
       main = {
         type = "disk";
@@ -8,59 +17,48 @@
           type = "gpt";
           partitions = {
             ESP = {
+              size = "512M";
               type = "EF00";
-              size = "511M";
               priority = 1;
               content = {
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-              };
-            };
-            swap = {
-              size = "8G";
-              priority = 2;
-              content = {
-                type = "swap";
+                mountOptions = [ "umask=0077" ];
               };
             };
             luks = {
               size = "100%";
-              priority = 3;
+              priority = 2;
               content = {
                 type = "luks";
                 name = "cryptroot";
+                settings.allowDiscards = true;
                 content = {
                   type = "btrfs";
                   extraArgs = [ "-f" ];
                   subvolumes = {
-                    "root" = {
-                      mountpoint = "/";
-                      mountOptions = [
-                        "compress=zstd:1"
-                        "noatime"
-                      ];
-                    };
-                    "home" = {
-                      mountpoint = "/home";
-                      mountOptions = [
-                        "compress=zstd:1"
-                        "noatime"
-                      ];
-                    };
-                    "nix" = {
+                    "@nix" = {
                       mountpoint = "/nix";
                       mountOptions = [
                         "compress=zstd:1"
                         "noatime"
+                        "ssd"
+                        "discard=async"
                       ];
                     };
-                    "persist" = {
+                    "@persist" = {
                       mountpoint = "/persist";
                       mountOptions = [
                         "compress=zstd:1"
                         "noatime"
+                        "ssd"
+                        "discard=async"
                       ];
+                    };
+                    "@swap" = {
+                      mountpoint = "/.swapvol";
+                      swap.swapfile.size = "34G";
                     };
                   };
                 };
