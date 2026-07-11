@@ -12,6 +12,7 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.home-manager.nixosModules.home-manager
     inputs.ragenix.nixosModules.default
     inputs.preservation.nixosModules.default
+    inputs.lanzaboote.nixosModules.lanzaboote
     inputs.niri.nixosModules.niri
     inputs.flatpak.nixosModules.nix-flatpak
     inputs.disko.nixosModules.default

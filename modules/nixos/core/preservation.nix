@@ -13,6 +13,7 @@
         "/var/lib/flatpak"
         "/var/lib/libvirt"
         "/var/lib/docker"
+        "/var/lib/sbctl"
         "/var/log"
       ];
 
