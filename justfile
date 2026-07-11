@@ -10,6 +10,10 @@ fmt:
 lint:
     statix check .
 
+# check for dead code (unused bindings)
+dead-code:
+    nix run nixpkgs#deadnix -- --fail .
+
 # validate flake
 check:
     nix flake check

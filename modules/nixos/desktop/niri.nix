@@ -15,8 +15,12 @@
     };
   };
 
-  programs.dconf.enable = true;
-  programs.niri.enable = true;
-  programs.niri.package = pkgs.niri-unstable;
-  programs.xwayland.enable = true;
+  programs = {
+    dconf.enable = true;
+    niri = {
+      enable = true;
+      package = pkgs.niri-unstable;
+    };
+    xwayland.enable = true;
+  };
 }

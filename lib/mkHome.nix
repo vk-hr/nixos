@@ -1,5 +1,9 @@
 { inputs }:
-{ system, homeModule, username }:
+{
+  system,
+  homeModule,
+  username,
+}:
 inputs.home-manager.lib.homeManagerConfiguration {
   pkgs = inputs.nixpkgs.legacyPackages.${system};
   extraSpecialArgs = {

@@ -23,9 +23,11 @@
   programs.virt-manager.enable = true;
   virtualisation.spiceUSBRedirection.enable = true;
 
-  boot.extraModulePackages = [ config.boot.kernelPackages.kvmfr ];
-  boot.initrd.kernelModules = [ "kvmfr" ];
-  boot.kernelParams = [ "kvmfr.static_size_mb=64" ];
+  boot = {
+    extraModulePackages = [ config.boot.kernelPackages.kvmfr ];
+    initrd.kernelModules = [ "kvmfr" ];
+    kernelParams = [ "kvmfr.static_size_mb=64" ];
+  };
 
   services.udev.packages = lib.singleton (
     pkgs.writeTextFile {

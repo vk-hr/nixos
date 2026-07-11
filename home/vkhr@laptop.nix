@@ -1,9 +1,11 @@
-{ config, pkgs, ... }:
+_:
 
 {
-  home.username = "vkhr";
-  home.homeDirectory = "/home/vkhr";
-  home.stateVersion = "26.05";
+  home = {
+    username = "vkhr";
+    homeDirectory = "/home/vkhr";
+    stateVersion = "26.05";
+  };
 
   programs.home-manager.enable = true;
 

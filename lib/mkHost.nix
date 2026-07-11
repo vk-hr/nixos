@@ -27,12 +27,14 @@ inputs.nixpkgs.lib.nixosSystem {
         inputs.fenix.overlays.default
       ];
 
-      home-manager.useGlobalPkgs = true;
-      home-manager.useUserPackages = true;
-      home-manager.extraSpecialArgs = {
-        inherit inputs username;
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        extraSpecialArgs = {
+          inherit inputs username;
+        };
+        users.${username} = homeModule;
       };
-      home-manager.users.${username} = homeModule;
     }
   ];
 }
