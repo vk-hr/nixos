@@ -9,7 +9,7 @@
 
   boot.resumeDevice = "/dev/mapper/cryptroot";
   boot.kernelParams = [
-    "resume_offset=TODO"
+    # "resume_offset=TODO"
   ];
 
   networking.hostName = "laptop";
