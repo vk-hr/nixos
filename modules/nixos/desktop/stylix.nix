@@ -29,6 +29,6 @@
 
     polarity = "dark";
 
-    targets.chromium.enable = false;
+    # targets.chromium.enable = false;
   };
 }

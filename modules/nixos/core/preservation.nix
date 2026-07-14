@@ -7,6 +7,7 @@
     preserveAt."/persist" = {
       directories = [
         "/var/lib/NetworkManager"
+        "/etc/NetworkManager/system-connections"
         "/var/lib/bluetooth"
         "/var/lib/systemd"
         "/var/lib/nixos"
@@ -40,6 +41,7 @@
         ".config/libreoffice"
         ".config/blender"
         ".config/net.imput.helium"
+        ".config/nushell"
         ".local/share/nushell"
         ".local/share/direnv"
         ".local/share/zoxide"
