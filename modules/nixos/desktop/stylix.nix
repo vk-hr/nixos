@@ -28,7 +28,5 @@
     };
 
     polarity = "dark";
-
-    # targets.chromium.enable = false;
   };
 }
