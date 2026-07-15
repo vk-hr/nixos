@@ -45,6 +45,11 @@
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
 
+    haumea = {
+      url = "github:nix-community/haumea";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";

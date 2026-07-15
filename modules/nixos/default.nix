@@ -1,9 +1,5 @@
+{ inputs, ... }:
+
 {
-  imports = [
-    ./core
-    ./desktop
-    ./networking
-    ./hardware
-    ./services
-  ];
+  imports = inputs.self.lib.loadTree ./.;
 }
