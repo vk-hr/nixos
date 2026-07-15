@@ -1,11 +1,5 @@
+{ inputs, ... }:
+
 {
-  imports = [
-    ./core
-    ./shell
-    ./terminal
-    ./editor
-    ./desktop
-    ./apps
-    ./dev
-  ];
+  imports = inputs.self.lib.loadTree ./.;
 }
