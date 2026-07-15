@@ -10,8 +10,4 @@
   programs.home-manager.enable = true;
 
   stylix.base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/black-metal-immortal.yaml";
-
-  imports = [
-    ../modules/home
-  ];
 }

@@ -1,10 +1,7 @@
-{ ... }:
-
 {
   imports = [
     ./hardware.nix
     ./disko.nix
-    ../../modules/nixos
   ];
 
   boot.resumeDevice = "/dev/mapper/cryptroot";

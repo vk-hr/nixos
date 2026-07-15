@@ -12,6 +12,7 @@ inputs.nixpkgs.lib.nixosSystem {
   };
   modules = [
     hostModule
+    inputs.self.nixosModules.default
     inputs.home-manager.nixosModules.home-manager
     inputs.ragenix.nixosModules.default
     inputs.preservation.nixosModules.default
@@ -33,7 +34,12 @@ inputs.nixpkgs.lib.nixosSystem {
         extraSpecialArgs = {
           inherit inputs username;
         };
-        users.${username} = homeModule;
+        users.${username} = {
+          imports = [
+            homeModule
+            inputs.self.homeModules.default
+          ];
+        };
       };
     }
   ];

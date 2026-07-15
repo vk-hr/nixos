@@ -18,6 +18,7 @@ inputs.home-manager.lib.homeManagerConfiguration {
     inherit inputs username;
   };
   modules = [
+    inputs.self.homeModules.default
     inputs.niri.homeModules.niri
     inputs.niri.homeModules.stylix
     inputs.stylix.homeModules.default

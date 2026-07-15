@@ -3,14 +3,19 @@ let
   lib = import ../lib { inherit inputs; };
 in
 {
-  flake.lib = lib;
+  flake = {
+    inherit lib;
 
-  flake.nixosConfigurations = {
-    laptop = lib.mkHost {
-      system = "x86_64-linux";
-      hostModule = ./laptop;
-      homeModule = ../home + "/vkhr@laptop.nix";
-      username = "vkhr";
+    nixosModules.default = ../modules/nixos;
+    homeModules.default = ../modules/home;
+
+    nixosConfigurations = {
+      laptop = lib.mkHost {
+        system = "x86_64-linux";
+        hostModule = ./laptop;
+        homeModule = ../home + "/vkhr@laptop.nix";
+        username = "vkhr";
+      };
     };
   };
 }
