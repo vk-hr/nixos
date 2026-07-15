@@ -9,12 +9,16 @@
         "/var/lib/NetworkManager"
         "/etc/NetworkManager/system-connections"
         "/var/lib/bluetooth"
-        "/var/lib/systemd"
+        "/var/lib/systemd/backlight"
+        "/var/lib/systemd/timesync"
         "/var/lib/nixos"
         "/var/lib/flatpak"
         "/var/lib/libvirt"
         "/var/lib/docker"
         "/var/lib/sbctl"
+        "/var/lib/cups"
+        "/var/lib/boltd"
+        "/etc/ssh"
         "/var/log"
       ];
 
@@ -22,6 +26,14 @@
         {
           file = "/etc/machine-id";
           inInitrd = true;
+        }
+        {
+          file = "/var/lib/systemd/random-seed";
+          mode = "0600";
+        }
+        {
+          file = "/var/lib/systemd/credential.secret";
+          mode = "0400";
         }
       ];
 
@@ -32,6 +44,7 @@
         }
         ".config/age"
         ".config/gh"
+        ".config/opencode"
         "rogram"
         "nixos"
         ".local/share/Steam"
@@ -42,9 +55,11 @@
         ".config/blender"
         ".config/net.imput.helium"
         ".config/nushell"
-        ".local/share/nushell"
         ".local/share/direnv"
+        ".local/share/opencode"
         ".local/share/zoxide"
+        ".local/state/opencode"
+        ".local/state/wireplumber"
         ".cargo"
         "go"
         ".bun"
