@@ -7,6 +7,7 @@
 {
   boot = {
     initrd.systemd.enable = true;
+    plymouth.enable = true;
 
     loader = {
       systemd-boot.enable = lib.mkForce false;
@@ -21,6 +22,8 @@
     kernelPackages = pkgs.linuxPackages_latest;
 
     kernelParams = [
+      "quiet"
+      "splash"
       "mem_sleep_default=s2idle"
       "intel_idle.max_cstate=9"
     ];

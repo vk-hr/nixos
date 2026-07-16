@@ -29,6 +29,14 @@
 
     polarity = "dark";
 
-    targets.chromium.enable = false;
+    targets = {
+      chromium.enable = false;
+      plymouth = {
+        logo = pkgs.runCommand "transparent-1x1.png" { } ''
+          ${pkgs.imagemagick}/bin/convert -size 1x1 xc:transparent $out
+        '';
+        logoAnimated = false;
+      };
+    };
   };
 }
