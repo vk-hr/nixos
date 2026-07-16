@@ -8,6 +8,7 @@
       "docker"
       "libvirtd"
       "kvm"
+      "video"
     ];
   };
 }
