@@ -11,11 +11,13 @@
     loader = {
       systemd-boot.enable = lib.mkForce false;
       efi.canTouchEfiVariables = true;
-    };
 
-    lanzaboote = {
-      enable = true;
-      pkiBundle = "/var/lib/sbctl";
+      limine = {
+        enable = true;
+        efiSupport = true;
+        enableEditor = false;
+        secureBoot.enable = true;
+      };
     };
 
     kernelPackages = pkgs.linuxPackages_latest;
