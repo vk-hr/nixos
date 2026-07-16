@@ -60,7 +60,7 @@ history:
 
 # rollback to previous generation
 rollback:
-    sudo nixos-rebuild rollback --flake .#laptop
+    sudo nixos-rebuild switch --rollback --flake .#laptop
 
 # show diff between current and previous generation
 diff:
