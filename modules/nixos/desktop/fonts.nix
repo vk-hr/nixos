@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 
 {
-  fonts.packages = [ pkgs.nerd-fonts.jetbrains-mono ];
+  fonts.packages = [ pkgs.nerd-fonts.iosevka-term ];
 
   fonts.fontconfig = {
     enable = true;

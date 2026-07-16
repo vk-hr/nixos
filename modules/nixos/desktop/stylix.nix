@@ -8,16 +8,16 @@
 
     fonts = {
       monospace = {
-        name = "JetBrainsMono Nerd Font";
-        package = pkgs.nerd-fonts.jetbrains-mono;
+        name = "IosevkaTerm Nerd Font";
+        package = pkgs.nerd-fonts.iosevka-term;
       };
       sansSerif = {
-        name = "DejaVu Sans";
-        package = pkgs.dejavu_fonts;
+        name = "Iosevka Aile";
+        package = pkgs.iosevka-bin.override { variant = "Aile"; };
       };
       serif = {
-        name = "DejaVu Serif";
-        package = pkgs.dejavu_fonts;
+        name = "Iosevka Etoile";
+        package = pkgs.iosevka-bin.override { variant = "Etoile"; };
       };
     };
 
