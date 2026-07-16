@@ -29,7 +29,7 @@ in
           natural-scroll = true;
         };
         mouse = {
-          accel-speed = 0.5;
+          accel-speed = 0.75;
           accel-profile = "flat";
         };
       };
@@ -44,7 +44,7 @@ in
         ];
         focus-ring = {
           enable = true;
-          width = 2;
+          width = 1;
           active.color = colors.base0D;
           inactive.color = colors.base02;
         };
@@ -52,7 +52,7 @@ in
 
       outputs = {
         "eDP-1" = {
-          scale = 1.5;
+          scale = 1.75;
         };
         "DP-1" = {
           scale = 1.5;
@@ -144,24 +144,6 @@ in
         GTK_USE_PORTAL = "1";
         NIXOS_OZONE_WL = "1";
       };
-
-      window-rules = [
-        {
-          matches = [ { title = "(?i)picture.in.picture"; } ];
-          open-floating = true;
-          default-column-width = {
-            fixed = 480;
-          };
-          default-window-height = {
-            fixed = 270;
-          };
-          default-floating-position = {
-            x = 32;
-            y = 32;
-            relative-to = "bottom-right";
-          };
-        }
-      ];
     };
   };
 }
