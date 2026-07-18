@@ -6,14 +6,13 @@
 
     preserveAt."/persist" = {
       directories = [
-        "/etc/NetworkManager/system-connections"
         "/etc/ssh"
-        "/var/lib/NetworkManager"
         "/var/lib/bluetooth"
         "/var/lib/boltd"
         "/var/lib/cups"
         "/var/lib/docker"
         "/var/lib/flatpak"
+        "/var/lib/iwd"
         "/var/lib/libvirt"
         "/var/lib/nixos"
         "/var/lib/sbctl"

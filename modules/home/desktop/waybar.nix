@@ -52,6 +52,7 @@ _:
           format-ethernet = "󰈀  {ipaddr}/{cidr}";
           format-disconnected = "󰖪  offline";
           tooltip-format = "Connected to {essid}\nSignal: {signalStrength}%\nIP: {ipaddr}";
+          on-click = "ghostty -e impala";
         };
 
         battery = {
