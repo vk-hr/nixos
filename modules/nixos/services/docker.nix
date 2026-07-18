@@ -3,6 +3,7 @@
 {
   virtualisation.docker = {
     enable = true;
+    enableOnBoot = false;
     liveRestore = true;
     autoPrune = {
       enable = true;

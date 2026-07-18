@@ -17,6 +17,7 @@
         efiSupport = true;
         enableEditor = false;
         secureBoot.enable = true;
+        maxGenerations = 4;
       };
     };
 
@@ -33,8 +34,9 @@
       "dell-smbios"
       "dell-smm-hwmon"
       "dell-wmi-ddv"
-      "dell-wmi-sysman"
     ];
+
+    blacklistedKernelModules = [ "dell_wmi_sysman" ];
   };
 
   environment.systemPackages = [ pkgs.sbctl ];
