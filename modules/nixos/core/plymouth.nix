@@ -213,12 +213,14 @@ let
       magick ${pkgs.nixos-icons}/share/icons/hicolor/256x256/apps/nix-snowflake-white.png \
         -alpha set -fill '#${colors.base05}' -colorize 100% -resize 128x128 logo.png
 
-      magick -size 400x10 xc:none \
-        -fill '#${colors.base01}' -stroke '#${colors.base03}' -strokewidth 1 \
-        -draw 'roundrectangle 0,0 399,9 5,5' \
-        progress_box.png
+      magick -size 1600x40 xc:none \
+        -fill '#${colors.base01}' -stroke '#${colors.base03}' -strokewidth 4 \
+        -draw 'roundrectangle 0,0 1599,39 20,20' \
+        -resize 400x10 progress_box.png
 
-      magick -size 400x6 xc:'#${colors.base0D}' progress_bar.png
+      magick -size 1584x24 xc:none \
+        -fill '#${colors.base0D}' -draw 'roundrectangle 0,0 1583,23 12,12' \
+        -resize 396x6 progress_bar.png
 
       magick -size 360x48 xc:none \
         -fill '#${colors.base01}' -stroke '#${colors.base03}' -strokewidth 1 \
@@ -284,6 +286,6 @@ in
   systemd.services = {
     plymouth-quit.wantedBy = lib.mkForce [ ];
     plymouth-quit-wait.wantedBy = lib.mkForce [ ];
-    greetd.serviceConfig.ExecStartPre = [ "-${pkgs.plymouth}/bin/plymouth quit --retain-splash" ];
+    display-manager.serviceConfig.ExecStartPre = [ "-${pkgs.plymouth}/bin/plymouth quit" ];
   };
 }
