@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
 let
   colors = config.lib.stylix.colors;
 
@@ -262,7 +267,7 @@ in
       themePackages = [ theme ];
     };
 
-    initrd.kernelModules = [ "i915" ];
+    initrd.kernelModules = [ "xe" ];
 
     kernelParams = [
       "quiet"
@@ -275,4 +280,10 @@ in
   };
 
   stylix.targets.plymouth.enable = false;
+
+  systemd.services = {
+    plymouth-quit.wantedBy = lib.mkForce [ ];
+    plymouth-quit-wait.wantedBy = lib.mkForce [ ];
+    greetd.serviceConfig.ExecStartPre = [ "-${pkgs.plymouth}/bin/plymouth quit --retain-splash" ];
+  };
 }
