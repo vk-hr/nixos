@@ -5,7 +5,7 @@ let
     mkdir -p $out/bin
     substitute ${pkgs.niri-unstable}/bin/niri-session $out/bin/niri-session \
       --replace-fail "systemctl --user import-environment" \
-      "systemctl --user import-environment WAYLAND_DISPLAY DISPLAY XDG_SESSION_TYPE XDG_CURRENT_DESKTOP NIRI_SOCKET"
+      "systemctl --user import-environment XDG_SESSION_TYPE"
     chmod +x $out/bin/niri-session
   '';
 in
