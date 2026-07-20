@@ -7,8 +7,7 @@
     enable = true;
     flags = [
       "--ozone-platform=wayland"
-      "--enable-features=UseOzonePlatform"
-      "--enable-features=WebRTCPipeWireCapturer"
+      "--enable-features=UseOzonePlatform,WebRTCPipeWireCapturer,VaapiVideoEncoder"
       "--disable-component-update"
       "--check-for-updates-interval=0"
       "--disable-background-networking"

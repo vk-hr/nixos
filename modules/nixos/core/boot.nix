@@ -27,16 +27,6 @@
       "mem_sleep_default=s2idle"
       "intel_idle.max_cstate=9"
     ];
-
-    kernelModules = [
-      "dell-laptop"
-      "dell-wmi"
-      "dell-smbios"
-      "dell-smm-hwmon"
-      "dell-wmi-ddv"
-    ];
-
-    blacklistedKernelModules = [ "dell_wmi_sysman" ];
   };
 
   environment.systemPackages = [ pkgs.sbctl ];

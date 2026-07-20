@@ -4,8 +4,8 @@
   gtk = {
     enable = true;
     iconTheme = {
-      name = "Yaru-red";
-      package = pkgs.yaru-theme;
+      name = "Papirus-Dark";
+      package = pkgs.papirus-icon-theme;
     };
   };
 }

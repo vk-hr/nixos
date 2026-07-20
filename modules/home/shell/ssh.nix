@@ -1,4 +1,8 @@
 {
+  osConfig ? null,
+  ...
+}:
+{
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
@@ -8,7 +12,8 @@
         AddKeysToAgent = "yes";
       };
       "github.com" = {
-        IdentityFile = "/run/agenix/ssh-github";
+        IdentityFile =
+          if osConfig != null then osConfig.age.secrets.ssh-github.path else "/run/agenix/ssh-github";
         StrictHostKeyChecking = "accept-new";
       };
     };

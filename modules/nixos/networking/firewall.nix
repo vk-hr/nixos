@@ -1,6 +1,8 @@
 {
   networking.firewall = {
-    allowedTCPPorts = [ 57621 ];
-    allowedUDPPorts = [ 5353 ];
+    interfaces.wlan0 = {
+      allowedTCPPorts = [ 57621 ];
+      allowedUDPPorts = [ 5353 ];
+    };
   };
 }

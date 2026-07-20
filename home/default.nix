@@ -6,7 +6,7 @@ in
   flake.homeConfigurations = {
     "vkhr@laptop" = lib.mkHome {
       system = "x86_64-linux";
-      homeModule = ./vkhr + "@laptop.nix";
+      homeModule = ./laptop-vkhr.nix;
       username = "vkhr";
     };
   };

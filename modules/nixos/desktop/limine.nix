@@ -5,7 +5,6 @@ in
 {
   boot.loader.limine.style = {
     wallpapers = lib.mkForce [ ];
-    backdrop = colors.base00;
     graphicalTerminal.font.scale = "2x2";
     interface = {
       branding = "NixOS";

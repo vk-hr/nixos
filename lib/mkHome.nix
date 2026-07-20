@@ -8,11 +8,7 @@ inputs.home-manager.lib.homeManagerConfiguration {
   pkgs = import inputs.nixpkgs {
     inherit system;
     config.allowUnfree = true;
-    overlays = [
-      inputs.helium.overlays.default
-      inputs.niri.overlays.niri
-      inputs.fenix.overlays.default
-    ];
+    overlays = import ./overlays.nix { inherit inputs; };
   };
   extraSpecialArgs = {
     inherit inputs username;
@@ -23,5 +19,11 @@ inputs.home-manager.lib.homeManagerConfiguration {
     inputs.niri.homeModules.stylix
     inputs.stylix.homeModules.default
     homeModule
+    (
+      { pkgs, lib, ... }:
+      {
+        stylix.base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/black-metal-immortal.yaml";
+      }
+    )
   ];
 }

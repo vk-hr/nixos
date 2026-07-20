@@ -19,7 +19,15 @@
       ];
       kernelModules = [ ];
     };
-    kernelModules = [ "kvm-intel" ];
+    kernelModules = [
+      "kvm-intel"
+      "dell-laptop"
+      "dell-wmi"
+      "dell-smbios"
+      "dell-smm-hwmon"
+      "dell-wmi-ddv"
+    ];
+    blacklistedKernelModules = [ "dell_wmi_sysman" ];
     extraModulePackages = [ ];
   };
 

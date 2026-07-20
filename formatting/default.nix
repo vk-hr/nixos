@@ -22,6 +22,14 @@
       formatter = treefmt.config.build.wrapper;
       checks = {
         formatting = treefmt.config.build.check inputs.self;
+        statix = pkgs.runCommand "statix-check" { nativeBuildInputs = [ pkgs.statix ]; } ''
+          statix check ${inputs.self}
+          touch $out
+        '';
+        deadnix = pkgs.runCommand "deadnix-check" { nativeBuildInputs = [ pkgs.deadnix ]; } ''
+          deadnix --fail ${inputs.self}
+          touch $out
+        '';
       };
     };
 }

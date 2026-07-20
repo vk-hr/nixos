@@ -9,7 +9,6 @@ in
     extensions = [
       "html"
       "just"
-      "matte-black"
       "nix"
       "toml"
     ];

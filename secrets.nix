@@ -3,4 +3,5 @@ let
 in
 {
   "secrets/ssh-github.age".publicKeys = [ publicKey ];
+  "secrets/password.age".publicKeys = [ publicKey ];
 }

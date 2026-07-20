@@ -13,7 +13,7 @@ in
       laptop = lib.mkHost {
         system = "x86_64-linux";
         hostModule = ./laptop;
-        homeModule = ../home + "/vkhr@laptop.nix";
+        homeModule = ../home/laptop-vkhr.nix;
         username = "vkhr";
       };
     };
