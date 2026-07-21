@@ -12,6 +12,7 @@ _:
         modules-left = [ "niri/workspaces" ];
         modules-center = [ "clock" ];
         modules-right = [
+          "niri/language"
           "tray"
           "network"
           "battery"
@@ -20,6 +21,12 @@ _:
         ];
 
         "niri/workspaces".format = "{index}";
+
+        "niri/language" = {
+          format = "{short} {variant}";
+          format-us = "🇺🇸 US";
+          format-ua = "🇺🇦 UA";
+        };
 
         clock.format = "{:%H:%M  %a %b %d}";
 

@@ -23,7 +23,10 @@ in
       ];
 
       input = {
-        keyboard.xkb.layout = "us";
+        keyboard.xkb = {
+          layout = "us,ua";
+          options = "grp:caps_toggle,caps:shift";
+        };
         touchpad = {
           tap = true;
           natural-scroll = true;
