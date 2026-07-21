@@ -7,16 +7,27 @@
 
 {
   config = lib.mkIf config.profiles.gaming.enable {
-    programs.steam = {
-      enable = true;
-      remotePlay.openFirewall = true;
-      dedicatedServer.openFirewall = true;
-      localNetworkGameTransfers.openFirewall = true;
-      gamescopeSession.enable = true;
-    };
-
     programs.gamemode.enable = true;
 
-    environment.systemPackages = with pkgs; [ gamescope ];
+    environment.systemPackages = with pkgs; [
+      gamescope
+      vulkan-tools
+      mesa-demos
+    ];
+
+    networking.firewall = {
+      allowedTCPPorts = [
+        27036
+        27037
+      ];
+      allowedUDPPorts = [
+        27031
+        27032
+        27033
+        27034
+        27035
+        27036
+      ];
+    };
   };
 }

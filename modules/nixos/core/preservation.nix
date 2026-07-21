@@ -52,7 +52,6 @@
         ".config/net.imput.helium"
         ".config/nushell"
         ".config/opencode"
-        ".local/share/Steam"
         ".local/share/direnv"
         ".local/share/keyrings"
         ".local/share/nvim"

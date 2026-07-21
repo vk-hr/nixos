@@ -5,6 +5,7 @@ _:
     enable = true;
     packages = [
       "com.spotify.Client"
+      "com.valvesoftware.Steam"
     ];
     update.auto = {
       enable = true;
