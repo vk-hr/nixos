@@ -13,6 +13,8 @@ in
     settings = {
       prefer-no-csd = true;
 
+      hotkey-overlay.skip-at-startup = true;
+
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
       spawn-at-startup = [
@@ -33,12 +35,24 @@ in
           accel-speed = 0.75;
           accel-profile = "flat";
         };
+        warp-mouse-to-focus.enable = true;
+        focus-follows-mouse = {
+          enable = true;
+          max-scroll-amount = "0%";
+        };
       };
 
       layout = {
         gaps = 8;
-        center-focused-column = "never";
+        center-focused-column = "always";
+        always-center-single-column = true;
+        default-column-width.proportion = 0.5;
         preset-column-widths = [
+          { proportion = 0.33333; }
+          { proportion = 0.5; }
+          { proportion = 0.66667; }
+        ];
+        preset-window-heights = [
           { proportion = 0.33333; }
           { proportion = 0.5; }
           { proportion = 0.66667; }
@@ -48,6 +62,14 @@ in
           width = 1;
           active.color = colors.base0D;
           inactive.color = colors.base02;
+        };
+        tab-indicator = {
+          enable = true;
+          active.color = colors.base0D;
+          inactive.color = colors.base02;
+          width = 4;
+          gap = 8;
+          position = "bottom";
         };
       };
 
@@ -73,6 +95,10 @@ in
         "Mod+Return".action.spawn = "ghostty";
         "Mod+Space".action.spawn = "fuzzel";
         "Mod+Q".action.close-window = [ ];
+
+        "Mod+Tab".action.focus-workspace-down = [ ];
+        "Mod+Shift+Tab".action.focus-workspace-up = [ ];
+        "Mod+T".action.toggle-column-tabbed-display = [ ];
 
         "Mod+Left".action.focus-column-or-monitor-left = [ ];
         "Mod+Right".action.focus-column-or-monitor-right = [ ];
@@ -101,6 +127,7 @@ in
         "Mod+Shift+5".action.move-column-to-workspace = 5;
 
         "Mod+F".action.maximize-column = [ ];
+        "Mod+Shift+F".action.set-window-height = "100%";
 
         "Mod+Shift+E".action.quit = [ ];
         "Mod+Shift+Slash".action.toggle-overview = [ ];
