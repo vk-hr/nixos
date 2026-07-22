@@ -2,8 +2,8 @@
   services.logind = {
     settings = {
       Login = {
-        HandleLidSwitch = "suspend";
-        HandleLidSwitchExternalPower = "suspend";
+        HandleLidSwitch = "suspend-then-hibernate";
+        HandleLidSwitchExternalPower = "suspend-then-hibernate";
         HandleLidSwitchDocked = "ignore";
       };
     };
