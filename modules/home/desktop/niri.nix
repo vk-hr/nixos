@@ -16,6 +16,7 @@ in
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
       spawn-at-startup = [
+        { sh = "dbus-update-activation-environment DISPLAY WAYLAND_DISPLAY XDG_SESSION_TYPE XAUTHORITY"; }
         { sh = "waybar"; }
       ];
 
