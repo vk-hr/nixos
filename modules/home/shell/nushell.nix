@@ -24,7 +24,7 @@ _:
         sync_on_enter = true;
       };
       rm.always_trash = true;
-      error_style = "fancy";
+      error_style = "short";
       use_kitty_protocol = true;
       render_right_prompt_on_last_line = true;
       footer_mode = 25;
@@ -50,7 +50,7 @@ _:
         starship prompt --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)'
       }
       $env.PROMPT_COMMAND = {|| create_left_prompt }
-      $env.PROMPT_COMMAND_RIGHT = ""
+      $env.PROMPT_COMMAND_RIGHT = {|| starship prompt --right --cmd-duration $env.CMD_DURATION_MS $'--status=($env.LAST_EXIT_CODE)' }
       $env.PROMPT_INDICATOR = ""
       $env.PROMPT_INDICATOR_VI_INSERT = ": "
       $env.PROMPT_INDICATOR_VI_NORMAL = "〉"
