@@ -73,6 +73,16 @@ in
         };
       };
 
+      window-rules = [
+        {
+          matches = [
+            { app-id = "helium"; }
+            { app-id = "dev.zed.Zed"; }
+          ];
+          default-column-width.proportion = 1.0;
+        }
+      ];
+
       outputs = {
         "eDP-1" = {
           scale = 1.5;
